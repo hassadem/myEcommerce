@@ -1,0 +1,149 @@
+nav {
+  background-color: #f1f1f1;
+  padding: 10px;
+  /*overflow: hidden; /* Clear the floats */
+}
+
+nav a {
+  float: left; /* Float the "Home" and "Category" links to the left */
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Style the "Cart" link to float to the right */
+.cart {
+  float: right;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position the dropdown below the parent .dropdown */
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Show the dropdown content when hovering over the parent .dropdown */
+}
+
+/* Show the dropdown content when hovering over the "Category" link */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Product section styles */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.product-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.product-item p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.product-item button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-item button:hover {
+  background-color: #45a049;
+}
+
+/* Hide the bullet points for the product category list */
+.dropdown-content {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Change background color on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.product-image {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Additional styles for the category menu */
+.category-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.category-image-wrapper {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
