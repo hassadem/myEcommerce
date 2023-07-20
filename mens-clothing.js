@@ -4,7 +4,7 @@ const cartCount = document.querySelector('.cart-count');
 const cartList = document.querySelector('.cart-items');
 
 // Fetch products from the API and display them on the homepage
-fetch('https://fakestoreapi.com/products')
+fetch("https://fakestoreapi.com/products/category/men's clothing")
   .then(response => response.json())
   .then(products => {
     const productContainer = document.querySelector('.product-list');
