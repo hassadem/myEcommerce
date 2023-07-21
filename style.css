@@ -147,12 +147,12 @@ nav a {
   border-radius: 50%;
 }
 .cart-image {
+  display: flex;
   width: 200px;
-  height: auto;
+  height: 200px;
   margin-bottom: 10px;
 }
 
 .cartList {
   list-style: none;
-  
 }
