@@ -146,3 +146,13 @@ nav a {
   object-fit: cover;
   border-radius: 50%;
 }
+.cart-image {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.cartList {
+  list-style: none;
+  
+}

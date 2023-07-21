@@ -57,16 +57,50 @@ function addToCart(product) {
   updateCart();
 }
 
+// function updateCart() {
+//   cartCount.textContent = cartItems.length;
+//   saveCartToLocalStorage();
+  
+//   if (cartList) {
+//     cartList.innerHTML = '';
+
+//     cartItems.forEach(item => {
+//       const cartItem = document.createElement('li');
+//       cartItem.textContent = `${item.title} - $${item.price.toFixed(2)}`;
+//       cartList.appendChild(cartItem);
+//     });
+//   }
+// }
+
 function updateCart() {
   cartCount.textContent = cartItems.length;
   saveCartToLocalStorage();
-  
   if (cartList) {
     cartList.innerHTML = '';
 
     cartItems.forEach(item => {
       const cartItem = document.createElement('li');
-      cartItem.textContent = `${item.title} - $${item.price.toFixed(2)}`;
+      cartItem.classList.add('cartList')
+      const imageList = document.createElement('img');
+      imageList.src = item.image;
+      imageList.alt = item.title;
+      imageList.classList.add('cart-image');
+      cartItem.appendChild(imageList);
+
+      // Create a container div for the title and price
+      const titleAndPriceContainer = document.createElement('div');
+
+      const cartItemTitle = document.createElement('h3');
+      cartItemTitle.textContent = item.title;
+      titleAndPriceContainer.appendChild(cartItemTitle);
+
+      const cartItemPrice = document.createElement('p');
+      cartItemPrice.textContent = `$${item.price.toFixed(2)}`;
+      titleAndPriceContainer.appendChild(cartItemPrice);
+
+      // Append the title and price container to the cart item
+      cartItem.appendChild(titleAndPriceContainer);
+
       cartList.appendChild(cartItem);
     });
   }
@@ -88,6 +122,36 @@ function updateCartOnCheckout() {
     });
   }
 }
+
+// function updateCartOnCheckout() {
+//   if (cartList) {
+//     cartList.innerHTML = '';
+
+//     cartItems.forEach(item => {
+//       const cartItem = document.createElement('li');
+//       const imageList = document.createElement('img');
+//       imageList.src = item.image;
+//       imageList.alt = item.title;
+//       cartItem.appendChild(imageList);
+
+//       // Create a container div for the title and price
+//       const titleAndPriceContainer = document.createElement('div');
+
+//       const cartItemTitle = document.createElement('h3');
+//       cartItemTitle.textContent = item.title;
+//       titleAndPriceContainer.appendChild(cartItemTitle);
+
+//       const cartItemPrice = document.createElement('p');
+//       cartItemPrice.textContent = `$${item.price.toFixed(2)}`;
+//       titleAndPriceContainer.appendChild(cartItemPrice);
+
+//       // Append the title and price container to the cart item
+//       cartItem.appendChild(titleAndPriceContainer);
+
+//       cartList.appendChild(cartItem);
+//     });
+//   }
+// }
 
 const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
 if (Array.isArray(storedCartItems)) {
